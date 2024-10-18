@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="EScan.Views.ListStudent"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="ListStudent"
+    BackgroundColor="#12372A">
+    <StackLayout BackgroundColor="#12372A" Orientation="Vertical">
+
+        <StackLayout BackgroundColor="#12372A" Orientation="Horizontal">
+            <ImageButton
+                Margin="15,10,0,0"
+                Clicked="ImageButton_Clicked_1"
+                HeightRequest="40"
+                HorizontalOptions="Start"
+                Source="back"
+                VerticalOptions="Center"
+                WidthRequest="40" />
+
+            <Label
+                Margin="10,10,0,0"
+                FontFamily="serif"
+                FontSize="20"
+                HorizontalOptions="Start"
+                Text="List of"
+                TextColor="White"
+                VerticalOptions="Center" />
+            <Label
+                x:Name="labelings"
+                Margin="5,10,0,0"
+                FontFamily="serif"
+                FontSize="20"
+                HorizontalOptions="Start"
+                Text="Student"
+                TextColor="White"
+                VerticalOptions="Center" />
+
+        </StackLayout>
+
+
+
+        <Border
+            Margin="10,30,10,0"
+            Padding="0,40,0,30"
+            BackgroundColor="#373A40"
+            HeightRequest="700"
+            StrokeShape="RoundRectangle 20"
+            StrokeThickness="0">
+            <StackLayout>
+                <Button
+                    Clicked="Button_Clicked"
+                    FontAttributes="Bold"
+                    HeightRequest="50"
+                    Text="Add Student"
+                    WidthRequest="200">
+                    <Button.Background>
+                        <LinearGradientBrush EndPoint="1,0">
+                            <GradientStop Offset="0" Color="#9BEC00" />
+                            <GradientStop Offset="1" Color="#059212" />
+                        </LinearGradientBrush>
+                    </Button.Background>
+                    <Button.Shadow>
+                        <Shadow
+                            Brush="white"
+                            Opacity="0.3"
+                            Radius="10"
+                            Offset="0,15" />
+                    </Button.Shadow>
+                </Button>
+                <CollectionView
+                    x:Name="ListofStudent"
+                    Grid.Row="3"
+                    Margin="10,30,10,0"
+                    EmptyView="No Student Found"
+                    HeightRequest="550"
+                    HorizontalOptions="Center">
+                    <CollectionView.ItemsLayout>
+                        <GridItemsLayout Orientation="Vertical" Span="1" />
+                    </CollectionView.ItemsLayout>
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <ContentView Padding="2">
+                                <SwipeView>
+
+
+
+
+                                    <SwipeView.RightItems>
+                                        <SwipeItemView
+                                            x:Name="itemdelete"
+                                            Margin="5"
+                                            Invoked="itemdelete_Invoked">
+                                            <Frame
+                                                Padding="0,0,0,0"
+                                                BackgroundColor="Red"
+                                                BorderColor="Transparent"
+                                                CornerRadius="20"
+                                                HeightRequest="60"
+                                                WidthRequest="60">
+                                                <StackLayout Margin="5">
+                                                    <StackLayout
+                                                        HorizontalOptions="CenterAndExpand"
+                                                        Orientation="Vertical"
+                                                        VerticalOptions="CenterAndExpand">
+                                                        <Image
+                                                            Aspect="AspectFit"
+                                                            HeightRequest="20"
+                                                            Source="delete"
+                                                            WidthRequest="20" />
+                                                        <Label
+                                                            FontSize="Micro"
+                                                            HorizontalOptions="CenterAndExpand"
+                                                            Text="Delete"
+                                                            TextColor="White"
+                                                            VerticalOptions="CenterAndExpand" />
+                                                    </StackLayout>
+                                                </StackLayout>
+                                            </Frame>
+                                        </SwipeItemView>
+                                    </SwipeView.RightItems>
+
+                                    <Border
+                                        Margin="3"
+                                        Padding="0"
+                                        BackgroundColor="white"
+                                        HeightRequest="150"
+                                        StrokeShape="RoundRectangle 10"
+                                        StrokeThickness="0">
+                                        <StackLayout
+                                            Grid.Column="1"
+                                            Margin="20"
+                                            BackgroundColor="Transparent"
+                                            HorizontalOptions="Fill"
+                                            Orientation="Vertical">
+
+
+                                            <Grid
+                                                Margin="20,0,0,10"
+                                                Padding="0,0,0,10"
+                                                RowDefinitions="Auto, Auto"
+                                                RowSpacing="0">
+                                                <Grid Grid.Row="0" RowDefinitions="Auto, Auto">
+                                                    <Label
+                                                        Grid.Row="0"
+                                                        FontSize="14"
+                                                        HorizontalOptions="Start"
+                                                        Text="ID:"
+                                                        TextColor="Black"
+                                                        VerticalOptions="Center" />
+                                                    <Label
+                                                        Grid.Row="1"
+                                                        Margin="15,0,0,0"
+                                                        FontAttributes="Bold"
+                                                        FontSize="20"
+                                                        Text="{Binding ID}"
+                                                        TextColor="Black" />
+                                                </Grid>
+
+
+
+                                                <Grid Grid.Row="1" RowDefinitions="auto,auto">
+                                                    <Label
+                                                        Grid.Row="0"
+                                                        FontSize="14"
+                                                        HorizontalOptions="Start"
+                                                        Text="Name:"
+                                                        TextColor="Black"
+                                                        VerticalOptions="CenterAndExpand" />
+                                                    <Label
+                                                        Grid.Row="1"
+                                                        Margin="15,0,0,0"
+                                                        FontAttributes="Bold"
+                                                        FontSize="20"
+                                                        Text="{Binding FullName}"
+                                                        TextColor="Black" />
+                                                </Grid>
+
+                                            </Grid>
+
+
+                                        </StackLayout>
+                                    </Border>
+
+                                </SwipeView>
+
+                            </ContentView>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </StackLayout>
+        </Border>
+
+
+    </StackLayout>
+</ContentPage>

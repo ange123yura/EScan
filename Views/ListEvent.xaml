@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="EScan.Views.ListEvent"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="ListEvent"
+    BackgroundColor="#12372A">
+    <StackLayout BackgroundColor="#12372A" Orientation="Vertical">
+
+        <StackLayout BackgroundColor="#12372A" Orientation="Horizontal">
+            <ImageButton
+                Margin="15,10,0,0"
+                Clicked="ImageButton_Clicked_1"
+                HeightRequest="40"
+                HorizontalOptions="Start"
+                Source="back"
+                VerticalOptions="Center"
+                WidthRequest="40" />
+
+            <Label
+                Margin="10,10,0,0"
+                FontFamily="serif"
+                FontSize="20"
+                HorizontalOptions="Start"
+                Text="List of"
+                TextColor="White"
+                VerticalOptions="Center" />
+            <Label
+                x:Name="labelings"
+                Margin="5,10,0,0"
+                FontFamily="serif"
+                FontSize="20"
+                HorizontalOptions="Start"
+                Text="Event"
+                TextColor="White"
+                VerticalOptions="Center" />
+
+        </StackLayout>
+
+
+
+
+        <Border
+            Margin="10,30,10,0"
+            Padding="0,40,0,30"
+            BackgroundColor="#373A40"
+            HeightRequest="700"
+            StrokeShape="RoundRectangle 20"
+            StrokeThickness="0">
+            <StackLayout>
+                <Button
+                    Clicked="Button_Clicked"
+                    FontAttributes="Bold"
+                    HeightRequest="50"
+                    Text="Add Event"
+                    WidthRequest="200">
+                    <Button.Background>
+                        <LinearGradientBrush EndPoint="1,0">
+                            <GradientStop Offset="0" Color="#9BEC00" />
+                            <GradientStop Offset="1" Color="#059212" />
+                        </LinearGradientBrush>
+                    </Button.Background>
+                    <Button.Shadow>
+                        <Shadow
+                            Brush="white"
+                            Opacity="0.3"
+                            Radius="10"
+                            Offset="0,15" />
+                    </Button.Shadow>
+                </Button>
+                <CollectionView
+                    x:Name="ListofEvent"
+                    Grid.Row="3"
+                    Margin="10,30,10,0"
+                    HeightRequest="550">
+                    <CollectionView.ItemsLayout>
+                        <GridItemsLayout Orientation="Vertical" Span="1" />
+                    </CollectionView.ItemsLayout>
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <ContentView Padding="2">
+                                <SwipeView>
+                                    <SwipeView.RightItems>
+                                        <SwipeItemView
+                                            x:Name="itemdelete"
+                                            Margin="5"
+                                            Invoked="itemdelete_Invoked">
+                                            <Frame
+                                                Padding="0,0,0,0"
+                                                BackgroundColor="Red"
+                                                BorderColor="Transparent"
+                                                CornerRadius="20"
+                                                HeightRequest="60"
+                                                WidthRequest="60">
+                                                <StackLayout Margin="5">
+                                                    <StackLayout
+                                                        HorizontalOptions="CenterAndExpand"
+                                                        Orientation="Vertical"
+                                                        VerticalOptions="CenterAndExpand">
+                                                        <Image
+                                                            Aspect="AspectFit"
+                                                            HeightRequest="20"
+                                                            Source="delete"
+                                                            WidthRequest="20" />
+                                                        <Label
+                                                            FontSize="Micro"
+                                                            HorizontalOptions="CenterAndExpand"
+                                                            Text="Delete"
+                                                            TextColor="White"
+                                                            VerticalOptions="CenterAndExpand" />
+                                                    </StackLayout>
+                                                </StackLayout>
+                                            </Frame>
+                                        </SwipeItemView>
+                                    </SwipeView.RightItems>
+                                    <Border
+                                        Margin="3"
+                                        Padding="0"
+                                        BackgroundColor="white"
+                                        HeightRequest="250"
+                                        StrokeShape="RoundRectangle 10"
+                                        StrokeThickness="0">
+                                        <Border.GestureRecognizers>
+                                            <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" />
+                                        </Border.GestureRecognizers>
+                                        <StackLayout
+                                            Grid.Column="1"
+                                            Margin="20"
+                                            BackgroundColor="Transparent"
+                                            HorizontalOptions="Fill"
+                                            Orientation="Vertical">
+
+
+                                            <Grid
+                                                Margin="0,0,0,0"
+                                                Padding="0,0,0,0"
+                                                RowDefinitions="Auto, Auto,Auto, Auto,Auto,auto"
+                                                RowSpacing="0">
+                                                <Grid Grid.Row="0" RowDefinitions="Auto, Auto">
+                                                    <Label
+                                                        Grid.Row="0"
+                                                        Margin="15,5,0,0"
+                                                        FontSize="10"
+                                                        HorizontalOptions="Start"
+                                                        Text="Code:"
+                                                        TextColor="Black"
+                                                        VerticalOptions="Center" />
+                                                    <Label
+                                                        Grid.Row="1"
+                                                        Margin="17,0,10,0"
+                                                        FontAttributes="Bold"
+                                                        FontFamily="serif"
+                                                        FontSize="15"
+                                                        HorizontalOptions="Start"
+                                                        Text="{Binding EventCode}"
+                                                        TextColor="Black" />
+                                                </Grid>
+
+
+
+                                                <Grid Grid.Row="1" RowDefinitions="auto,auto">
+                                                    <Label
+                                                        Grid.Row="0"
+                                                        Margin="15,0,0,0"
+                                                        FontSize="10"
+                                                        HorizontalOptions="Start"
+                                                        Text="Event Name:"
+                                                        TextColor="Black"
+                                                        VerticalOptions="CenterAndExpand" />
+                                                    <Label
+                                                        Grid.Row="1"
+                                                        Margin="17,0,10,0"
+                                                        FontAttributes="Bold"
+                                                        FontFamily="serif"
+                                                        FontSize="15"
+                                                        HorizontalOptions="Start"
+                                                        Text="{Binding EventName}"
+                                                        TextColor="Black" />
+                                                </Grid>
+                                                <Grid Grid.Row="2" RowDefinitions="auto,auto">
+                                                    <Label
+                                                        Grid.Row="0"
+                                                        Margin="15,0,0,0"
+                                                        FontSize="10"
+                                                        HorizontalOptions="Start"
+                                                        Text="Event Date:"
+                                                        TextColor="Black"
+                                                        VerticalOptions="CenterAndExpand" />
+                                                    <Label
+                                                        Grid.Row="1"
+                                                        Margin="17,0,10,0"
+                                                        FontAttributes="Bold"
+                                                        FontFamily="serif"
+                                                        FontSize="15"
+                                                        HorizontalOptions="Start"
+                                                        Text="{Binding EventDate}"
+                                                        TextColor="Black" />
+                                                </Grid>
+                                                <Grid Grid.Row="3" RowDefinitions="auto,auto">
+                                                    <Label
+                                                        Grid.Row="0"
+                                                        Margin="15,0,0,0"
+                                                        FontSize="10"
+                                                        HorizontalOptions="Start"
+                                                        Text="Event Start:"
+                                                        TextColor="Black"
+                                                        VerticalOptions="CenterAndExpand" />
+                                                    <Label
+                                                        Grid.Row="1"
+                                                        Margin="17,0,10,0"
+                                                        FontAttributes="Bold"
+                                                        FontFamily="serif"
+                                                        FontSize="15"
+                                                        HorizontalOptions="Start"
+                                                        Text="{Binding EventStart}"
+                                                        TextColor="Black" />
+                                                </Grid>
+                                                <Grid Grid.Row="4" RowDefinitions="auto,auto">
+                                                    <Label
+                                                        Grid.Row="0"
+                                                        Margin="15,0,0,0"
+                                                        FontSize="10"
+                                                        HorizontalOptions="Start"
+                                                        Text="Event End:"
+                                                        TextColor="Black"
+                                                        VerticalOptions="CenterAndExpand" />
+                                                    <Label
+                                                        Grid.Row="1"
+                                                        Margin="17,0,10,0"
+                                                        FontAttributes="Bold"
+                                                        FontFamily="serif"
+                                                        FontSize="15"
+                                                        HorizontalOptions="Start"
+                                                        Text="{Binding EventEnd}"
+                                                        TextColor="Black" />
+                                                </Grid>
+                                                <!--<Label
+                                                    Grid.Row="5"
+                                                    Margin="0,20,0,0"
+                                                    FontSize="10"
+                                                    HorizontalOptions="Center"
+                                                    Text="Click to View Students"
+                                                    TextColor="Gray" />-->
+                                            </Grid>
+
+
+                                        </StackLayout>
+                                    </Border>
+
+                                </SwipeView>
+
+                            </ContentView>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </StackLayout>
+        </Border>
+
+
+    </StackLayout>
+</ContentPage>

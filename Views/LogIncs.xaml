@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="EScan.Views.LogIncs"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:ur="http://schemas.enisn-projects.io/dotnet/maui/uraniumui/material"
+    Title="LogIncs"
+    BackgroundColor="#12372A">
+    <VerticalStackLayout
+        Margin="10"
+        Padding="10"
+        VerticalOptions="Center">
+        <Image
+            Margin="0,50,0,0"
+            HeightRequest="230"
+            HorizontalOptions="Center"
+            Source="logo"
+            VerticalOptions="Center"
+            WidthRequest="230">
+            <Image.Shadow>
+                <Shadow
+                    Brush="Black"
+                    Opacity=".7"
+                    Offset="10,10" />
+            </Image.Shadow>
+        </Image>
+        <Label
+            Margin="0,30,0,0"
+            FontAttributes="Bold"
+            FontFamily="Serif"
+            FontSize="50"
+            HorizontalOptions="Center"
+            Text="Welcome"
+            TextColor="White" />
+        <Label
+            Margin="0,-10,0,30"
+            FontFamily="Serif"
+            FontSize="18"
+            HorizontalOptions="Center"
+            Text="Login to Continue"
+            TextColor="White" />
+        <Grid ColumnDefinitions="0,*">
+            <ur:TextField
+                x:Name="txtuname"
+                Title="Enter Username"
+                Grid.Column="1"
+                Margin="11,-5,11,10"
+                AccentColor="White"
+                BorderColor="White"
+                FontFamily="Serif"
+                Icon="f_username.png"
+                TextColor="White"
+                TitleColor="White"
+                VerticalOptions="Center" />
+        </Grid>
+        <Grid ColumnDefinitions="0,*">
+            <ur:TextField
+                x:Name="txtpword"
+                Title="Enter Password"
+                Grid.Column="1"
+                Margin="11,0,11,5"
+                AccentColor="White"
+                BorderColor="White"
+                FontFamily="Serif"
+                Icon="f_lock.png"
+                IsPassword="True"
+                TextColor="White"
+                TitleColor="White"
+                VerticalOptions="CenterAndExpand">
+                <ur:TextField.Attachments>
+                    <ur:TextFieldPasswordShowHideAttachment />
+
+                </ur:TextField.Attachments>
+            </ur:TextField>
+        </Grid>
+        <HorizontalStackLayout>
+            <ur:CheckBox
+                Margin="20,0,0,20"
+                BoxBackgroundColor="White"
+                BoxSizeRequest="18"
+                FontFamily="Serif"
+                Text="Remember me"
+                TextColor="White"
+                TextFontSize="12"
+                Color="#008DDA" />
+            <Button
+                Margin="48,-20,0,0"
+                BackgroundColor="Transparent"
+                BorderColor="Transparent"
+                Clicked="Button_Clicked_1"
+                FontAttributes="Bold"
+                FontFamily="Serif"
+                FontSize="12"
+                IsEnabled="true"
+                StyleClass="TextButton"
+                Text="Forgot password"
+                TextColor="White" />
+        </HorizontalStackLayout>
+        <VerticalStackLayout>
+            <Button
+                x:Name="btnadd"
+                Margin="10,10,10,5"
+                Clicked="btnadd_Clicked"
+                FontAttributes="Bold"
+                FontFamily="Serif"
+                FontSize="15"
+                Text="LOGIN"
+                TextColor="white"
+                VerticalOptions="Center">
+                <Button.Background>
+                    <LinearGradientBrush EndPoint="1,0">
+                        <GradientStop Offset="0" Color="#9BEC00" />
+                        <GradientStop Offset="1" Color="#059212" />
+                    </LinearGradientBrush>
+                </Button.Background>
+
+                <Button.Shadow>
+                    <Shadow
+                        Brush="white"
+                        Opacity="0.3"
+                        Radius="10"
+                        Offset="0,15" />
+                </Button.Shadow>
+            </Button>
+            <HorizontalStackLayout>
+                <Label
+                    Margin="75,8,0,5"
+                    FontSize="10"
+                    Text="Don't have an account?"
+                    TextColor="White" />
+                <Label
+                    x:Name="signups"
+                    Margin="13,4,0,0"
+                    FontAttributes="Bold"
+                    FontFamily="Serif"
+                    IsEnabled="true"
+                    StyleClass="TextButton"
+                    Text="Register"
+                    TextColor="White">
+
+
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" />
+                    </Label.GestureRecognizers>
+                </Label>
+            </HorizontalStackLayout>
+
+        </VerticalStackLayout>
+    </VerticalStackLayout>
+</ContentPage>

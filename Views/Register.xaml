@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="EScan.Views.Register"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:ur="http://schemas.enisn-projects.io/dotnet/maui/uraniumui/material"
+    Title="Register"
+    BackgroundColor="#12372A">
+    <VerticalStackLayout
+        Margin="20"
+        Padding="10"
+        VerticalOptions="CenterAndExpand">
+        <Image
+            Margin="0,15,0,0"
+            HeightRequest="80"
+            HorizontalOptions="Center"
+            Source="logo"
+            VerticalOptions="Center"
+            WidthRequest="80">
+            <Image.Shadow>
+                <Shadow
+                    Brush="Black"
+                    Opacity=".7"
+                    Offset="10,10" />
+            </Image.Shadow>
+        </Image>
+        <Label
+            Margin="0,0,0,10"
+            FontAttributes="Bold"
+            FontFamily="Serif"
+            FontSize="40"
+            HorizontalOptions="Center"
+            Text="Register"
+            TextColor="White" />
+
+
+        <Grid ColumnDefinitions="40,*">
+
+            <ur:TextField
+                x:Name="txtfrname"
+                Title="Enter Firstname"
+                Grid.Column="1"
+                Margin="-35,0,11,5"
+                AccentColor="White"
+                BorderColor="White"
+                Icon="f_user.png"
+                TextColor="White"
+                TitleColor="White"
+                VerticalOptions="CenterAndExpand" />
+        </Grid>
+
+
+        <Grid ColumnDefinitions="40,*">
+
+            <ur:TextField
+                x:Name="txtlsname"
+                Title="Enter Lastname"
+                Grid.Column="1"
+                Margin="-35,0,11,5"
+                AccentColor="White"
+                BorderColor="White"
+                Icon="f_user.png"
+                TextColor="White"
+                TitleColor="White"
+                VerticalOptions="CenterAndExpand" />
+        </Grid>
+
+
+        <Grid ColumnDefinitions="40,*">
+
+            <ur:TextField
+                x:Name="txtuname"
+                Title="Enter Username"
+                Grid.Column="1"
+                Margin="-35,0,11,5"
+                AccentColor="White"
+                BorderColor="White"
+                Icon="f_username.png"
+                TextColor="White"
+                TitleColor="White"
+                VerticalOptions="CenterAndExpand" />
+        </Grid>
+
+
+        <Grid ColumnDefinitions="40,*">
+
+            <ur:TextField
+                x:Name="txtpword"
+                Title="Enter Password"
+                Grid.Column="1"
+                Margin="-35,0,11,5"
+                AccentColor="White"
+                BorderColor="White"
+                Icon="f_lock.png"
+                IsPassword="True"
+                TextColor="White"
+                TitleColor="White"
+                VerticalOptions="CenterAndExpand">
+                <ur:TextField.Attachments>
+                    <ur:TextFieldPasswordShowHideAttachment />
+
+                </ur:TextField.Attachments>
+            </ur:TextField>
+        </Grid>
+
+        <VerticalStackLayout>
+            <Button
+                x:Name="btnadd"
+                Margin="5,15,5,5"
+                BackgroundColor="#7BC9FF"
+                Clicked="btnadd_Clicked"
+                FontAttributes="Bold"
+                FontFamily="Serif"
+                FontSize="15"
+                Text="REGISTER"
+                TextColor="White">
+                <Button.Background>
+                    <LinearGradientBrush EndPoint="1,0">
+                        <GradientStop Offset="0" Color="#9BEC00" />
+                        <GradientStop Offset="1" Color="#059212" />
+                    </LinearGradientBrush>
+                </Button.Background>
+                <Button.Shadow>
+                    <Shadow
+                        Brush="white"
+                        Opacity="0.3"
+                        Radius="10"
+                        Offset="0,15" />
+                </Button.Shadow>
+            </Button>
+            <Label
+                Margin="60,8,0,5"
+                FontSize="10"
+                Text="Already have an account?"
+                TextColor="White" />
+            <Button
+                Margin="125,-35,0,0"
+                BackgroundColor="Transparent"
+                BorderColor="Transparent"
+                Clicked="Button_Clicked"
+                FontAttributes="Bold"
+                FontFamily="Serif"
+                IsEnabled="true"
+                StyleClass="TextButton"
+                Text="LogIn"
+                TextColor="White" />
+        </VerticalStackLayout>
+    </VerticalStackLayout>
+</ContentPage>

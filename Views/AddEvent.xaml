@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="EScan.Views.AddEvent"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:ur="http://schemas.enisn-projects.io/dotnet/maui/uraniumui/material"
+    Title="AddEvent"
+    BackgroundColor="#12372A">
+    <VerticalStackLayout
+        Margin="20"
+        Padding="10"
+        VerticalOptions="Start">
+        <ImageButton
+            Margin="15,10,0,30"
+            Clicked="ImageButton_Clicked_1"
+            HeightRequest="40"
+            HorizontalOptions="Start"
+            Source="back"
+            VerticalOptions="Center"
+            WidthRequest="40" />
+
+        <Label
+            Margin="0,0,0,20"
+            FontAttributes="Bold"
+            FontFamily="Serif"
+            FontSize="40"
+            HorizontalOptions="Center"
+            Text="Add Event"
+            TextColor="White" />
+        <Grid ColumnDefinitions="40,*">
+
+            <ur:TextField
+                x:Name="txtid"
+                Title="Enter Name Code"
+                Grid.Column="1"
+                Margin="-35,0,11,15"
+                AccentColor="White"
+                BorderColor="White"
+                Icon="f_user.png"
+                TextColor="White"
+                TitleColor="White"
+                VerticalOptions="CenterAndExpand" />
+        </Grid>
+
+        <Grid ColumnDefinitions="40,*">
+
+            <ur:TextField
+                x:Name="txtname"
+                Title="Enter Event Name"
+                Grid.Column="1"
+                Margin="-35,0,11,15"
+                AccentColor="White"
+                BorderColor="White"
+                Icon="f_user.png"
+                TextColor="White"
+                TitleColor="White"
+                VerticalOptions="CenterAndExpand" />
+        </Grid>
+
+        <!--<Grid ColumnDefinitions="40,*">
+
+            <ur:DatePickerField
+                x:Name="txtdate"
+                Title="Enter Event Date"
+                Grid.Column="1"
+                Margin="-35,0,11,15"
+                AccentColor="White"
+                BorderColor="White"
+                Icon="f_user.png"
+                TextColor="White"
+                TitleColor="White"
+                VerticalOptions="CenterAndExpand" />
+        </Grid>-->
+        <Label
+            Margin="15,5,0,5"
+            Text="Enter Date"
+            TextColor="White" />
+        <Border
+            Margin="-5,0,0,10"
+            HeightRequest="50"
+            StrokeShape="RoundRectangle 7"
+            StrokeThickness="1"
+            WidthRequest="285">
+            <DatePicker
+                x:Name="txtdate"
+                Grid.Column="1"
+                Margin="0"
+                TextColor="White"
+                VerticalOptions="CenterAndExpand" />
+        </Border>
+        <Label
+            Margin="15,5,0,5"
+            Text="Enter Time Start"
+            TextColor="White" />
+        <Border
+            Margin="-5,0,0,10"
+            HeightRequest="50"
+            StrokeShape="RoundRectangle 7"
+            StrokeThickness="1"
+            WidthRequest="285">
+            <TimePicker
+                x:Name="txtstart"
+                Grid.Column="1"
+                Margin="0"
+                Format="hh:mm tt"
+                TextColor="White"
+                VerticalOptions="CenterAndExpand" />
+        </Border>
+
+        <Label
+            Margin="15,5,0,5"
+            Text="Enter Time End"
+            TextColor="White" />
+        <Border
+            Margin="-5,0,0,10"
+            HeightRequest="50"
+            StrokeShape="RoundRectangle 7"
+            StrokeThickness="1"
+            WidthRequest="285">
+            <TimePicker
+                x:Name="txtend"
+                Grid.Column="1"
+                Margin="0"
+                Format="hh:mm tt"
+                TextColor="White"
+                VerticalOptions="CenterAndExpand" />
+        </Border>
+
+        <!--<Grid ColumnDefinitions="40,*">
+
+            <ur:TimePickerField
+                x:Name="txtstart"
+                Title="Enter Event Time Start"
+                Grid.Column="1"
+                Margin="-35,0,11,15"
+                AccentColor="White"
+                BorderColor="White"
+                Icon="f_user.png"
+                TextColor="White"
+                TitleColor="White"
+                VerticalOptions="CenterAndExpand" />
+        </Grid>-->
+        <!--<Grid ColumnDefinitions="40,*">
+
+            <ur:TimePickerField
+                x:Name="txtend"
+                Title="Enter Event Time End"
+                Grid.Column="1"
+                Margin="-35,0,11,15"
+                AccentColor="White"
+                BorderColor="White"
+                Icon="f_user.png"
+                TextColor="White"
+                TitleColor="White"
+                VerticalOptions="CenterAndExpand" />
+        </Grid>-->
+
+
+
+
+
+
+
+
+        <VerticalStackLayout>
+            <Button
+                x:Name="btnadd"
+                Margin="5,15,5,5"
+                BackgroundColor="#7BC9FF"
+                Clicked="btnadd_Clicked"
+                FontAttributes="Bold"
+                FontFamily="Serif"
+                FontSize="15"
+                Text="Add Event"
+                TextColor="White">
+                <Button.Background>
+                    <LinearGradientBrush EndPoint="1,0">
+                        <GradientStop Offset="0" Color="#9BEC00" />
+                        <GradientStop Offset="1" Color="#059212" />
+                    </LinearGradientBrush>
+                </Button.Background>
+                <Button.Shadow>
+                    <Shadow
+                        Brush="white"
+                        Opacity="0.3"
+                        Radius="10"
+                        Offset="0,15" />
+                </Button.Shadow>
+            </Button>
+
+        </VerticalStackLayout>
+    </VerticalStackLayout>
+</ContentPage>

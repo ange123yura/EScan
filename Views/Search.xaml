@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="EScan.Views.Search"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="Search"
+    BackgroundColor="#12372A">
+    <StackLayout Orientation="Vertical">
+
+        <StackLayout HeightRequest="660" Orientation="Vertical">
+
+            <StackLayout Orientation="Horizontal">
+                <Image
+                    x:Name="logo"
+                    Margin="10,10,0,0"
+                    HeightRequest="50"
+                    Source="logo"
+                    VerticalOptions="Center"
+                    WidthRequest="50" />
+                <Label
+                    Margin="10,0,0,0"
+                    FontAttributes="Bold"
+                    FontFamily="serif"
+                    FontSize="20"
+                    Text="SEARCH"
+                    TextColor="White"
+                    VerticalOptions="Center" />
+            </StackLayout>
+
+
+
+            <Border
+                Margin="10,20,10,0"
+                Padding="0,40,0,30"
+                BackgroundColor="#373A40"
+                HeightRequest="650"
+                StrokeShape="RoundRectangle 20"
+                StrokeThickness="0"
+                ZIndex="0">
+                <VerticalStackLayout>
+                    <Button
+                        x:Name="btnadd"
+                        Margin="5,20,5,5"
+                        BackgroundColor="#7BC9FF"
+                        Clicked="btnadd_Clicked"
+                        FontAttributes="Bold"
+                        FontFamily="Serif"
+                        FontSize="25"
+                        HeightRequest="200"
+                        Text="View Event"
+                        TextColor="White"
+                        WidthRequest="250">
+                        <Button.Background>
+                            <LinearGradientBrush EndPoint="1,0">
+                                <GradientStop Offset="0" Color="#9BEC00" />
+                                <GradientStop Offset="1" Color="#059212" />
+                            </LinearGradientBrush>
+                        </Button.Background>
+                        <Button.Shadow>
+                            <Shadow
+                                Brush="white"
+                                Opacity="0.3"
+                                Radius="10"
+                                Offset="0,15" />
+                        </Button.Shadow>
+                    </Button>
+                    <Button
+                        x:Name="btnadds"
+                        Margin="5,50,5,5"
+                        BackgroundColor="#7BC9FF"
+                        Clicked="btnadd_Clickeds"
+                        FontAttributes="Bold"
+                        FontFamily="Serif"
+                        FontSize="25"
+                        HeightRequest="200"
+                        Text="View Student"
+                        TextColor="White"
+                        WidthRequest="250">
+                        <Button.Background>
+                            <LinearGradientBrush EndPoint="1,0">
+                                <GradientStop Offset="0" Color="#9BEC00" />
+                                <GradientStop Offset="1" Color="#059212" />
+                            </LinearGradientBrush>
+                        </Button.Background>
+                        <Button.Shadow>
+                            <Shadow
+                                Brush="white"
+                                Opacity="0.3"
+                                Radius="10"
+                                Offset="0,15" />
+                        </Button.Shadow>
+                    </Button>
+
+                </VerticalStackLayout>
+            </Border>
+        </StackLayout>
+
+
+
+        <HorizontalStackLayout Margin="0,90,0,0" HorizontalOptions="CenterAndExpand">
+            <StackLayout HorizontalOptions="CenterAndExpand" Orientation="Vertical">
+                <Image
+                    HeightRequest="30"
+                    HorizontalOptions="Center"
+                    Source="home"
+                    WidthRequest="30" />
+                <Label
+                    FontSize="10"
+                    HorizontalOptions="Center"
+                    Text="Home"
+                    TextColor="White" />
+                <StackLayout.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" />
+                </StackLayout.GestureRecognizers>
+            </StackLayout>
+            <StackLayout
+                Margin="60,0,60,0"
+                HorizontalOptions="CenterAndExpand"
+                Orientation="Vertical">
+                <Image
+                    HeightRequest="30"
+                    HorizontalOptions="Center"
+                    Source="search"
+                    WidthRequest="30" />
+                <Label
+                    FontSize="10"
+                    HorizontalOptions="Center"
+                    Text="Search"
+                    TextColor="White" />
+
+            </StackLayout>
+            <StackLayout HorizontalOptions="CenterAndExpand" Orientation="Vertical">
+                <Image
+                    HeightRequest="30"
+                    HorizontalOptions="Center"
+                    Source="profile"
+                    WidthRequest="30" />
+                <Label
+                    FontSize="10"
+                    HorizontalOptions="Center"
+                    Text="Profile"
+                    TextColor="White" />
+                <StackLayout.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_1s" />
+                </StackLayout.GestureRecognizers>
+            </StackLayout>
+        </HorizontalStackLayout>
+    </StackLayout>
+</ContentPage>
